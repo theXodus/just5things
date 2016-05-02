@@ -15,7 +15,8 @@ gem 'devise', '~> 4.0', '>= 4.0.1'
 
 group :development, :test do
   gem 'byebug'
-  gem 'rspec', '~> 3.4'
+  gem 'rspec-rails', '~> 3.4', '>= 3.4.2'
+  gem 'factory_girl_rails'
 end
 
 group :development do
