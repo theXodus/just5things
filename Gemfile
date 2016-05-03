@@ -14,6 +14,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise', '~> 4.0', '>= 4.0.1'
 
 group :development, :test do
+  gem 'faker', '~> 1.6', '>= 1.6.3'
   gem 'byebug'
   gem 'rspec-rails', '~> 3.4', '>= 3.4.2'
   gem 'factory_girl_rails'
