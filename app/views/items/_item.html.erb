@@ -1,1 +1,4 @@
-<h5><%= item.name %></h5>
+<p>
+<%= item.name %> |
+<%= link_to "Complete", [@user, item], method: :delete, class: 'glyphicon glyphicon-ok' %>
+</p>

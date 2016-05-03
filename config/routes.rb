@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   end
 
   resources :users do
-    resources :items, only: :create
+    resources :items, only: [:create, :destroy]
   end
 
   root to: "welcome#index"

@@ -16,6 +16,17 @@ class ItemsController < ApplicationController
     end
   end
 
+  def destroy
+    @user = User.find(params[:user_id])
+    @item = @user.items.find(params[:id])
+    if @item.destroy
+      redirect_to current_user
+      flash[:success] = "ToDo Completed"
+    else
+      render 'show'
+    end
+  end
+
   private
 
   def item_params
