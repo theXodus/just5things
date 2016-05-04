@@ -5,8 +5,8 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @user = current_user
-    @item = current_user.items.build(item_params)
+    @user = User.find(params[:user_id])
+    @item = @user.items.build(item_params)
 
     if @item.save
       flash[:success] = "Item Created"
@@ -19,12 +19,17 @@ class ItemsController < ApplicationController
   def destroy
     @user = User.find(params[:user_id])
     @item = @user.items.find(params[:id])
+
     if @item.destroy
-      redirect_to current_user
-      flash[:success] = "ToDo Completed"
+      flash[:success] = "ToDo Completed!"
     else
-      render 'show'
+      flash[:alert] = "ToDo couldn't be deleted. Try again."
     end
+
+    respond_to do |format|
+       format.html
+       format.js
+     end
   end
 
   private
