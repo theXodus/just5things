@@ -21,7 +21,7 @@ class ItemsController < ApplicationController
     @item = @user.items.find(params[:id])
 
     if @item.destroy
-      flash[:success] = "ToDo Completed!"
+      flash.now[:success] = "ToDo Completed!"
     else
       flash[:alert] = "ToDo couldn't be deleted. Try again."
     end
