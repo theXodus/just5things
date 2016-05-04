@@ -1,6 +1,6 @@
 <%= content_tag :div, class: 'media', id: "item-#{item.id}" do %>
   <p>
-    <%= item.name %> |
+    <%= item.name %> (created <%= distance_of_time_in_words(item.created_at, Time.now)%> ago) |
     <%= link_to "Complete", [item.user, item], method: :delete, remote: true, class: 'glyphicon glyphicon-ok' %>
   </p>
 <% end %>
