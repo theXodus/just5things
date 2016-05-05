@@ -1,4 +1,4 @@
 <%= form_for [user, item] do |f| %>
-  <%= f.text_field :name %>
+  <%= f.text_field :name, placeholder: "Add a new to do item" %>
   <%= f.submit "Create" %>
 <% end %>
