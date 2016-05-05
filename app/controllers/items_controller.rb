@@ -1,5 +1,7 @@
 class ItemsController < ApplicationController
 
+  before_action
+
   def new
     @item = @user.items.new
   end
@@ -20,10 +22,12 @@ class ItemsController < ApplicationController
     @user = User.find(params[:user_id])
     @item = @user.items.find(params[:id])
 
-    if @item.destroy
+    if @user == current_user
+      @item.destroy
       flash.now[:success] = "ToDo Completed!"
     else
       flash[:alert] = "ToDo couldn't be deleted. Try again."
+      redirect_to @user
     end
 
     respond_to do |format|

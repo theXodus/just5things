@@ -1,6 +1,8 @@
 <%= content_tag :div, class: 'media', id: "item-#{item.id}" do %>
   <p>
-    <%= item.name %> (created <%= distance_of_time_in_words(item.created_at, Time.now)%> ago) |
-    <%= link_to "Complete", [item.user, item], method: :delete, remote: true, class: 'glyphicon glyphicon-ok' %>
+    <%= item.name %> (created <%= distance_of_time_in_words(item.created_at, Time.now)%> ago)
+    <% if current_user == item.user%>
+    | <%= link_to "Complete", [item.user, item], method: :delete, remote: true, class: 'glyphicon glyphicon-ok' %>
+    <% end %>
   </p>
 <% end %>
