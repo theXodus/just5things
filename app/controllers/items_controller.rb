@@ -7,7 +7,7 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:user_id])
+    @user = current_user
     @item = @user.items.build(item_params)
 
     if @item.save
