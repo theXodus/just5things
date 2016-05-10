@@ -19,7 +19,7 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:user_id])
+    @user = current_user
     @item = @user.items.find(params[:id])
 
     if @user == current_user
