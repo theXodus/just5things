@@ -7,8 +7,8 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @user = current_user
-    @item = @user.items.build(item_params)
+    #@user = current_user
+    @item = current_user.items.build(item_params)
 
     if @item.save
       flash[:success] = "Item Created"
@@ -21,7 +21,7 @@ class ItemsController < ApplicationController
   def destroy
     @item = current_user.items.find(params[:id])
 
-    if @user == current_user
+    if @item.user == current_user
       @item.destroy
       flash.now[:success] = "ToDo Completed!"
     else
