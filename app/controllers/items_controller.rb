@@ -7,7 +7,6 @@ class ItemsController < ApplicationController
   end
 
   def create
-    #@user = current_user
     @item = current_user.items.build(item_params)
 
     if @item.save
