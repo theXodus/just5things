@@ -4,6 +4,12 @@ hobbes = User.create!(
   confirmed_at: Time.zone.now
 )
 
+bentley = User.create!(
+  email: "bentley@example.com",
+  password: 'hobbes',
+  confirmed_at: Time.zone.now
+)
+
 15.times do
   User.create!(
     email: Faker::Internet.email,
@@ -28,6 +34,7 @@ end
   created_at: Faker::Time.backward(7)
   )
 end
+
 
 
 
