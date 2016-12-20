@@ -8,12 +8,17 @@ class ItemsController < ApplicationController
 
   def create
     @item = current_user.items.build(item_params)
+    @new_item = Item.new
 
     if @item.save
-      flash[:success] = "Item Created"
-      redirect_to current_user
+      flash[:success] = "Work hard. Don't let it be just a dream."
     else
       flash[:danger] = "Error Saving Item"
+    end
+
+    respond_to do |format|
+       format.html
+       format.js
     end
   end
 
@@ -22,9 +27,9 @@ class ItemsController < ApplicationController
 
     if @item.user == current_user
       @item.destroy
-      flash.now[:success] = "ToDo Completed!"
+      flash.now[:success] = "Your dreams have become reality!"
     else
-      flash[:alert] = "ToDo couldn't be deleted. Try again."
+      flash.now[:alert] = "ToDo couldn't be deleted. Try again."
       redirect_to @user
     end
 

@@ -7,17 +7,21 @@
   </div>
 
   <% if @user == current_user %>
+  <div class="new-item">
     <ul class="list-group">
       <%= render partial: '/items/form', locals: { user: @user, item: @item } %>
     </ul>
+  </div>
   <% end %>
 
   <h3> Things to Do:</h3>
 
   <ul class="list-group">
-    <% @items.each do |item| %>
-      <%= render partial: '/items/item', locals: {item: item} %>
-    <% end %>
+    <div class="js-items">
+      <% @items.each do |item| %>
+        <%= render partial: '/items/item', locals: {item: item} %>
+      <% end %>
+    </div>  
   </ul>
 
 </div>

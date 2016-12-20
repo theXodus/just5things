@@ -1,20 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ToDoApp</title>
+  <title>justDoIt</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', 'https://fonts.googleapis.com/css?family=Baloo+Thambi' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <%= render "layouts/header" %>
 </head>
 <body>
-  <div class="container">
-    <% flash.each do |key, value| %>
-      <div class="alert alert-<%= key %>"><%= value %></div>
-    <% end %>
-  </div>
 
-<%= yield %>
+  <%= yield %>
 
 </body>
 </html>

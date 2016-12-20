@@ -1,11 +1,11 @@
 <li class="list-group-item">
   <%= link_to user.email, user_path(user) %> (<%= user.items.count %> items) |
   <% if current_user.friends.include?(user) %>
-    <span class="label label-primary">Friend!</span>
+    <span class="btn btn-success btn-sm">Friend!</span>
   <% elsif current_user == user%>
-    <span class="label label-primary">You!</span>
+    <span class="btn btn-success btn-sm">You!</span>
   <% elsif current_user.pending_friends.include?(user) %>
-    <span class="label label-info">Pending...</span>
+    <span class="btn btn-info btn-sm">Pending...</span>
   <% else %>
     <%= link_to "Add Friend", friendships_path(friend_id: user), method: :post, class: 'btn btn-primary btn-sm' %>
   <% end %>
