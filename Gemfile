@@ -12,6 +12,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise', '~> 4.0', '>= 4.0.1'
+gem 'inline_svg'
 
 group :development, :test do
   gem 'faker', '~> 1.6', '>= 1.6.3'

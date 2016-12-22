@@ -1,5 +1,6 @@
 <nav class="navbar navbar-default" role="navigation">
   <div class="navbar-header ">
+    <%= render :partial => 'svg/shia' %>
     <%= link_to "JustDoIt!", user_signed_in? ? current_user : root_path, class: "navbar-brand" %>
   </div>
   <ul class="nav navbar-nav navbar-right">

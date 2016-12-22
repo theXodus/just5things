@@ -1,27 +1,27 @@
 <div class="container">
 
-  <div class="row">
-    <div class="well">
-      <h1><%= @user.email %> Profile</h1>
+    <div class="row">
+        <div class="well">
+            <h1><%= @user.email %>
+                Profile</h1>
+        </div>
     </div>
-  </div>
 
-  <% if @user == current_user %>
-  <div class="new-item">
+    <% if @user == current_user %>
+      <div class="row">
+          <%= render partial: '/items/form', locals: { user: @user, item: @item } %>
+      </div>
+    <% end %>
+
+    <h3>
+        Things to Do:</h3>
+
     <ul class="list-group">
-      <%= render partial: '/items/form', locals: { user: @user, item: @item } %>
+        <div class="js-items">
+            <% @items.each do |item| %>
+            <%= render partial: '/items/item', locals: {item: item} %>
+            <% end %>
+        </div>
     </ul>
-  </div>
-  <% end %>
-
-  <h3> Things to Do:</h3>
-
-  <ul class="list-group">
-    <div class="js-items">
-      <% @items.each do |item| %>
-        <%= render partial: '/items/item', locals: {item: item} %>
-      <% end %>
-    </div>  
-  </ul>
 
 </div>

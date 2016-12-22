@@ -16,28 +16,28 @@
 @import "bootstrap";
 
 .navbar-default {
-   background-color: #587B7F;
+   background-color: #86BA90;
    padding-top: 20px;
 }
-.navbar-header {
+svg {
    float: left;
-   padding-top: 5px;
-   padding-left: 42%;
-   text-align: center;
-   width: 50%;
+
 }
 .navbar-header a {
-   font-family: 'Baloo Thambi', cursive;
    color: white !important;
    font-size: 5rem;
-   margin-bottom: 25px;
 }
 .navbar-brand {
-   float: none;
+   font-family: 'Lato', sans-serif;
+   margin-bottom: 5px;
+   margin-left: -15px;
 }
 .nav {
-   padding-right: 15px;
+   margin-right: 10px;
 }
 .color-white {
    color: white !important;
+}
+.btn-success {
+   background-color: #86BA90;
 }
