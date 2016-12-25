@@ -38,6 +38,19 @@ svg {
 .color-white {
    color: white !important;
 }
-.btn-success {
-   background-color: #86BA90;
+.btn-primary {
+  background-color: #86BA90;
+  border-color: #86BA90;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active {
+  color: #ffffff;
+  background-color: #648767;
+  border-color: #648767;
+}
+.border {
+  outline: 1px solid #B3D6C6;
+  padding-bottom: 10px;
 }
